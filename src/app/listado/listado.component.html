@@ -4,6 +4,7 @@
             <th>Id</th>
             <th>Nombre</th>
             <th>Precio</th>
+            <th>Opciones</th>
         </tr>
     </thead>
     <tbody>
@@ -11,6 +12,10 @@
             <td>{{producto.id}}</td>
             <td>{{producto.nombre}}</td>
             <td>{{producto.precio}}</td>
+            <td>
+                <button routerLink="/formulario/{{producto.id}}">Editar</button>
+                <button (click)="borrar(producto.id)">Borrar</button>
+            </td>
         </tr>
     </tbody>
 </table>

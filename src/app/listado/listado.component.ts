@@ -14,9 +14,22 @@ export class ListadoComponent implements OnInit {
   constructor(private productoService: ProductoService) { }
 
   ngOnInit(): void {
-    this.productoService.obtenerProductos().subscribe(
-      productosRecibidos => this.productos = productosRecibidos
-    )
+    this.pedirProductos();
   }
 
+  private pedirProductos() {
+    this.productoService.obtenerProductos().subscribe(
+      productosRecibidos => this.productos = productosRecibidos
+    );
+  }
+
+  borrar(id: number): void {
+    if (confirm(`¿Estás seguro de que quieres borrar el id ${id}?`)) {
+      this.productoService.borrarProducto(id).subscribe(
+        //this.pedirProductos.bind(this)
+        //_ => this.pedirProductos()
+        () => this.pedirProductos()
+      );
+    }
+  }
 }

@@ -7,6 +7,7 @@ import { Producto } from './producto';
   providedIn: 'root'
 })
 export class ProductoService {
+  
   private url = '/api/productos/';
 
   constructor(private http: HttpClient) {}
@@ -17,5 +18,9 @@ export class ProductoService {
 
   obtenerProductoPorId(id: number): Observable<Producto> {
     return this.http.get<Producto>(this.url + id);
+  }
+
+  borrarProducto(id: number): Observable<any> {
+    return this.http.delete(this.url + id);
   }
 }
