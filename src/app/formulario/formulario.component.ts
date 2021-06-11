@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { Producto } from '../producto';
 import { ProductoService } from '../producto.service';
 
@@ -11,11 +12,17 @@ export class FormularioComponent implements OnInit {
 
   producto: Producto = { id: 0, nombre: '', precio: 0 };
 
-  constructor(private productoService: ProductoService) { }
+  constructor(
+    private productoService: ProductoService,
+    private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.productoService.obtenerProductoPorId(2).subscribe(
-      productoRecibido => this.producto = productoRecibido
-    )
+    const id: number = Number(this.route.snapshot.paramMap.get('id'));
+
+    if (id) {
+      this.productoService.obtenerProductoPorId(id).subscribe(
+        productoRecibido => this.producto = productoRecibido
+      )
+    }
   }
 }
