@@ -7,11 +7,15 @@ import { Producto } from './producto';
   providedIn: 'root'
 })
 export class ProductoService {
-  private url = '/api/productos';
+  private url = '/api/productos/';
 
   constructor(private http: HttpClient) {}
 
   obtenerProductos(): Observable<Producto[]> {
     return this.http.get<Producto[]>(this.url);
+  }
+
+  obtenerProductoPorId(id: number): Observable<Producto> {
+    return this.http.get<Producto>(this.url + id);
   }
 }
