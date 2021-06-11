@@ -1,14 +1,14 @@
 <div>
     <label for="id">Id</label>
-    <input readonly id="id" />
+    <input readonly id="id" value="{{producto.id}}" />
 </div>
 <div>
     <label for="nombre">Nombre</label>
-    <input id="nombre" />
+    <input id="nombre" [(ngModel)]="producto.nombre" />
 </div>
 <div>
     <label for="precio">Precio</label>
-    <input type="number" step=".01" id="precio" />
+    <input type="number" step=".01" id="precio" [(ngModel)]="producto.precio" />
 </div>
 <div>
     <button>Aceptar</button>

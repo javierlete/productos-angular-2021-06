@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { ListadoComponent } from './listado/listado.component';
 import { ProductosMemoriaParaRest } from './ProductosMemoriaParaRest';
 import { FormularioComponent } from './formulario/formulario.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { FormularioComponent } from './formulario/formulario.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
     HttpClientModule,
     HttpClientInMemoryWebApiModule.forRoot(
       ProductosMemoriaParaRest, { dataEncapsulation: false }
