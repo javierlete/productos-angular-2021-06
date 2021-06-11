@@ -20,6 +20,14 @@ export class ProductoService {
     return this.http.get<Producto>(this.url + id);
   }
 
+  insertar(producto: Producto): Observable<Producto> {
+    return this.http.post<Producto>(this.url, producto);
+  }
+  
+  modificar(producto: Producto): Observable<Producto> {
+    return this.http.put<Producto>(this.url, producto);
+  }
+
   borrarProducto(id: number): Observable<any> {
     return this.http.delete(this.url + id);
   }
