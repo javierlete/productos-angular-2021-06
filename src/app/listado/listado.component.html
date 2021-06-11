@@ -7,15 +7,10 @@
         </tr>
     </thead>
     <tbody>
-        <tr>
-            <td>1</td>
-            <td>Producto1</td>
-            <td>111,11</td>
-        </tr>
-        <tr>
-            <td>2</td>
-            <td>Producto2</td>
-            <td>222,22</td>
+        <tr *ngFor="let producto of productos">
+            <td>{{producto.id}}</td>
+            <td>{{producto.nombre}}</td>
+            <td>{{producto.precio}}</td>
         </tr>
     </tbody>
 </table>
