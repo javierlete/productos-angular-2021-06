@@ -1,9 +1,12 @@
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ListadoComponent } from './listado/listado.component';
+import { ProductosMemoriaParaRest } from './ProductosMemoriaParaRest';
 
 @NgModule({
   declarations: [
@@ -12,7 +15,11 @@ import { ListadoComponent } from './listado/listado.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    HttpClientInMemoryWebApiModule.forRoot(
+      ProductosMemoriaParaRest, { dataEncapsulation: false }
+    )
   ],
   providers: [],
   bootstrap: [AppComponent]
