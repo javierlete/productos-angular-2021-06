@@ -8,7 +8,7 @@ import { Producto } from './producto';
 })
 export class ProductoService {
   
-  private url = '/api/productos/';
+  private url = 'http://localhost:3000/productos/';
 
   constructor(private http: HttpClient) {}
 
@@ -25,7 +25,7 @@ export class ProductoService {
   }
   
   modificar(producto: Producto): Observable<Producto> {
-    return this.http.put<Producto>(this.url, producto);
+    return this.http.put<Producto>(this.url + producto.id, producto);
   }
 
   borrarProducto(id: number): Observable<any> {
