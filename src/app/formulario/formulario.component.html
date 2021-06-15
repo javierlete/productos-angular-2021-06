@@ -1,15 +1,19 @@
-<div>
-    <label class="form-label" for="id">Id</label>
-    <input class="form-control" readonly id="id" value="{{producto.id}}" />
-</div>
-<div>
-    <label class="form-label" for="nombre">Nombre</label>
-    <input class="form-control" id="nombre" [(ngModel)]="producto.nombre" />
-</div>
-<div>
-    <label class="form-label" for="precio">Precio</label>
-    <input class="form-control" type="number" step=".01" id="precio" [(ngModel)]="producto.precio" />
-</div>
-<div>
-    <button class="btn btn-primary" (click)="aceptar()">Aceptar</button>
+<div class="row">
+    <div class="offset-4 col-4">
+        <div>
+            <label class="form-label" for="id">Id</label>
+            <input class="form-control" readonly id="id" value="{{producto.id}}" />
+        </div>
+        <div>
+            <label class="form-label" for="nombre">Nombre</label>
+            <input class="form-control" id="nombre" [(ngModel)]="producto.nombre" />
+        </div>
+        <div>
+            <label class="form-label" for="precio">Precio</label>
+            <input class="form-control" type="number" step=".01" id="precio" [(ngModel)]="producto.precio" />
+        </div>
+        <div>
+            <button class="btn btn-primary" (click)="aceptar()">Aceptar</button>
+        </div>
+    </div>
 </div>
