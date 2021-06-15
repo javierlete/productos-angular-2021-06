@@ -1,7 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { MensajeService } from './mensaje.service';
 import { Producto } from './producto';
+import { tap } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -10,10 +12,12 @@ export class ProductoService {
   
   private url = 'http://localhost:3000/productos/';
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private mensajeService: MensajeService) {}
 
   obtenerProductos(): Observable<Producto[]> {
-    return this.http.get<Producto[]>(this.url);
+    return this.http.get<Producto[]>(this.url).pipe(
+      tap(_ => this.mensajeService.nuevo('Se han obtenido los productos'))
+    );
   }
 
   obtenerProductoPorId(id: number): Observable<Producto> {
