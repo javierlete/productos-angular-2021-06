@@ -16,7 +16,7 @@ export class ProductoService {
 
   obtenerProductos(): Observable<Producto[]> {
     return this.http.get<Producto[]>(this.url).pipe(
-      tap(_ => this.mensajeService.nuevo('Se han obtenido los productos'))
+      tap(_ => this.mensajeService.nuevo({ texto: 'Se han obtenido los productos', nivel: 'success' }))
     );
   }
 
