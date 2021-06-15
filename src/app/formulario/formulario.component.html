@@ -1,15 +1,15 @@
 <div>
-    <label for="id">Id</label>
-    <input readonly id="id" value="{{producto.id}}" />
+    <label class="form-label" for="id">Id</label>
+    <input class="form-control" readonly id="id" value="{{producto.id}}" />
 </div>
 <div>
-    <label for="nombre">Nombre</label>
-    <input id="nombre" [(ngModel)]="producto.nombre" />
+    <label class="form-label" for="nombre">Nombre</label>
+    <input class="form-control" id="nombre" [(ngModel)]="producto.nombre" />
 </div>
 <div>
-    <label for="precio">Precio</label>
-    <input type="number" step=".01" id="precio" [(ngModel)]="producto.precio" />
+    <label class="form-label" for="precio">Precio</label>
+    <input class="form-control" type="number" step=".01" id="precio" [(ngModel)]="producto.precio" />
 </div>
 <div>
-    <button (click)="aceptar()">Aceptar</button>
+    <button class="btn btn-primary" (click)="aceptar()">Aceptar</button>
 </div>

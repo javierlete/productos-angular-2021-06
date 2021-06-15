@@ -1,5 +1,5 @@
-<table>
-    <thead>
+<table class="table table-hover table-striped table-bordered">
+    <thead class="table-dark">
         <tr>
             <th>Id</th>
             <th>Nombre</th>
@@ -13,18 +13,18 @@
             <td>{{producto.nombre}}</td>
             <td>{{producto.precio}}</td>
             <td>
-                <button routerLink="/formulario/{{producto.id}}">Editar</button>
-                <button (click)="borrar(producto.id)">Borrar</button>
+                <button class="btn btn-primary" routerLink="/formulario/{{producto.id}}">Editar</button>
+                <button class="btn btn-danger" (click)="borrar(producto.id)">Borrar</button>
             </td>
         </tr>
     </tbody>
-    <tfoot>
+    <tfoot class="table-dark">
         <tr>
             <td></td>
             <td></td>
             <td></td>
             <td>
-                <button routerLink="/formulario">Añadir</button>
+                <button class="btn btn-primary" routerLink="/formulario">Añadir</button>
             </td>
         </tr>
     </tfoot>
