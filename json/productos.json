@@ -3,12 +3,36 @@
     {
       "id": 1,
       "nombre": "Ratón",
-      "precio": 12.34
+      "precio": 12.34,
+      "categoriaId": "1"
     },
     {
       "id": 2,
       "nombre": "Monitor",
-      "precio": 123.45
+      "precio": 123.45,
+      "categoriaId": "1"
+    },
+    {
+      "nombre": "Office",
+      "precio": 123,
+      "categoriaId": 2,
+      "id": 3
+    },
+    {
+      "nombre": "Altavoces",
+      "precio": 321,
+      "categoriaId": "1",
+      "id": 4
+    }
+  ],
+  "categorias": [
+    {
+      "id": 1,
+      "nombre": "Hardware"
+    },
+    {
+      "id": 2,
+      "nombre": "Software"
     }
   ]
 }

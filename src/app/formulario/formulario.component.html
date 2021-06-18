@@ -4,6 +4,14 @@
             <label class="form-label" for="id">Id</label>
             <input class="form-control" readonly id="id" value="{{producto.id}}" />
         </div>
+
+        <div>
+            <label class="form-label" for="categoria">Categoría</label>
+            <select class="form-select" id="categoria" [(ngModel)]="producto.categoria.id">
+                <option *ngFor="let categoria of categorias" value="{{categoria.id}}">{{categoria.nombre}}</option>
+            </select>
+        </div>
+
         <div>
             <label class="form-label" for="nombre">Nombre</label>
             <input class="form-control" id="nombre" [(ngModel)]="producto.nombre" />
