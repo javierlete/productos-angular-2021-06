@@ -6,11 +6,7 @@ import { MensajeService } from '../mensaje.service';
   templateUrl: './mensajes.component.html',
   styleUrls: ['./mensajes.component.css']
 })
-export class MensajesComponent implements OnInit {
+export class MensajesComponent {
 
   constructor(public mensajeService: MensajeService) { }
-
-  ngOnInit(): void {
-  }
-
 }
